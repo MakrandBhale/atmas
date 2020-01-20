@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StudentActivity">
+
+    <com.skyfishjy.library.RippleBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        app:rb_color="@color/colorPrimary"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="6">
+
+        <TextView
+            android:id="@+id/greet_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/scan_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:text="Tap to start" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/nearby"
+            app:backgroundTint="@color/textPrimaryLight"
+            app:borderWidth="0dp"
+            app:elevation="2dp"
+            app:fabCustomSize="148dp"
+            app:maxImageSize="56dp"
+            app:useCompatPadding="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/scan_button"
+            android:layout_marginTop="32dp"
+            android:id="@+id/status"
+            android:textSize="20sp"
+            android:text="Scanning..."
+            android:visibility="gone"
+            />
+
+
+    </com.skyfishjy.library.RippleBackground>
+
+    <ListView
+        android:id="@+id/teacher_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:onClick="listenMessages"
+        android:text="Start"
+        android:visibility="gone"
+        />
+
+</LinearLayout>
